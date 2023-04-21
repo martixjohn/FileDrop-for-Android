@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_receiving"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/app_padding"
+    tools:context=".pages.send.SendFileActivity">
+
+
+    <TextView
+        android:id="@+id/tv_connected_to_client"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/app_padding2"
+        android:textSize="@dimen/app_font_big_size"
+        app:layout_constraintBottom_toTopOf="@id/tv_waiting_for_peer_sending"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="已连接到XXX" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/widgets_file_receiving_progress"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/guideline3"
+        app:layout_constraintTop_toBottomOf="@id/guideline4"
+        tools:layout_editor_absoluteX="15dp">
+
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progress_indicator_sending"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:max="100"
+            android:progress="0"
+            app:indicatorSize="300dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tv_file_receiving"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/progress_indicator_sending"
+            app:layout_constraintStart_toStartOf="@id/progress_indicator_sending"
+            app:layout_constraintTop_toBottomOf="@id/tv_receive_progress" />
+
+
+        <TextView
+            android:id="@+id/tv_receive_progress"
+            style="@style/TextAppearance.Material3.DisplaySmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/app_font_size"
+            app:layout_constraintBottom_toBottomOf="@id/progress_indicator_sending"
+            app:layout_constraintEnd_toEndOf="@id/progress_indicator_sending"
+            app:layout_constraintStart_toStartOf="@id/progress_indicator_sending"
+            app:layout_constraintTop_toTopOf="@id/progress_indicator_sending"
+            tools:text="50%" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.77" />
+
+    <TextView
+        android:id="@+id/tv_waiting_for_peer_sending"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/app_padding3"
+        android:text="@string/waiting_for_peer_sending"
+        app:layout_constraintBottom_toTopOf="@+id/widgets_file_receiving_progress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.29" />
+
+    <Button
+        android:id="@+id/btn_disconnect_client"
+        style="@style/AppTheme.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/disconnect"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_preview_file"
+        style="@style/AppTheme.Button"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/file_preview"
+        app:layout_constraintBottom_toTopOf="@+id/btn_disconnect_client"
+        tools:layout_editor_absoluteX="161dp" />
+
+    <!--接收中-->
+</androidx.constraintlayout.widget.ConstraintLayout>

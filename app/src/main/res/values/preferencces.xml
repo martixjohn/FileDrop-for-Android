@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--shared preferences名称-->
+    <string name="shared_settings_name">settings</string>
+    <!--接收保存文件路径 content uri-->
+    <string name="shared_settings_saving_location">saving_location</string>
+    <!--当前设备名称-->
+    <string name="shared_settings_device_name">device_name</string>
+</resources>

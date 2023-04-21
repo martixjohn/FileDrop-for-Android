@@ -1,0 +1,34 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="android:textSize">@dimen/app_font_size</item>
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorOnPrimary</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+<!--    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.Material3.Light" />-->
+
+<!--    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.Material3.BottomAppBar" />-->
+
+    <style name="AppTheme.NavigationView" parent="ThemeOverlay.Material3.NavigationView"/>
+
+    <style name="AppTheme.Button" parent="Widget.Material3.Button">
+        <item name="cornerRadius">10dp</item>
+        <item name="android:paddingVertical">15dp</item>
+        <item name="android:paddingHorizontal">40dp</item>
+        <item name="iconTint">@color/white</item>
+    </style>
+</resources>

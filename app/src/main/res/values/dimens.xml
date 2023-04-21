@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="app_padding">15dp</dimen>
+    <dimen name="app_padding2">30dp</dimen>
+    <dimen name="app_padding3">40dp</dimen>
+    <dimen name="app_font_small_size">13sp</dimen>
+    <dimen name="app_font_size">15sp</dimen>
+    <dimen name="app_font_big_size">20sp</dimen>
+    <dimen name="app_radius">15dp</dimen>
+</resources>

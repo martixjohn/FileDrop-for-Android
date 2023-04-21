@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pages.home.HomeFragment">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/app_padding"
+        android:src="@drawable/undraw_modern_design_re_dlp8"
+        app:layout_constraintBottom_toTopOf="@id/guideline1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.16000003"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <ImageView
+        android:id="@+id/iv_home_bottom_rect"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="@dimen/app_padding"
+        android:layout_marginEnd="@dimen/app_padding"
+        android:layout_marginBottom="@dimen/app_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline1"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_weight="1" />
+
+
+    <Button
+        android:id="@+id/btn_home_send"
+        style="@style/AppTheme.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/app_padding2"
+        android:layout_marginEnd="@dimen/app_padding2"
+        android:layout_marginBottom="@dimen/app_padding"
+        android:drawableLeft="@drawable/baseline_file_upload_24"
+        android:text="@string/send"
+        app:layout_constraintBottom_toTopOf="@id/btn_home_receive"
+        app:layout_constraintEnd_toEndOf="@+id/iv_home_bottom_rect"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/iv_home_bottom_rect" />
+
+    <Button
+        android:id="@+id/btn_home_receive"
+        style="@style/AppTheme.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/app_padding2"
+        android:layout_marginEnd="@dimen/app_padding2"
+        android:layout_marginBottom="@dimen/app_padding"
+        android:drawableLeft="@drawable/baseline_download_24"
+        android:text="@string/accept"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_home_bottom_rect"
+        app:layout_constraintEnd_toEndOf="@+id/iv_home_bottom_rect"
+        app:layout_constraintStart_toStartOf="@+id/iv_home_bottom_rect" />
+
+    <TextView
+        android:id="@+id/tv_my_device_name"
+        style="@style/TextAppearance.AppCompat.Display1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_home_bottom_rect"
+        tools:text="Pixel XL" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.56"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_home_transfer_your_data"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_short_intro"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/iv_home_bottom_rect"
+        app:layout_constraintStart_toStartOf="@+id/iv_home_bottom_rect" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_rename_device"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:src="@drawable/baseline_edit_24"
+        app:fabSize="mini"
+        app:layout_constraintEnd_toEndOf="@+id/tv_my_device_name"
+        app:layout_constraintStart_toStartOf="@+id/tv_my_device_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_my_device_name" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

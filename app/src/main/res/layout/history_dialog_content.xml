@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:layout_height="400dp"
+    tools:layout_width="300dp"
+    android:padding="@dimen/app_padding2">
+
+
+    <TextView
+        android:id="@+id/tv_history_device_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app_padding"
+        app:layout_constraintStart_toStartOf="@+id/tv_history_file_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_history_transimission_type"
+        tools:text="接收设备: 小虎" />
+
+    <TextView
+        android:id="@+id/tv_history_transimission_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app_padding"
+        app:layout_constraintStart_toStartOf="@id/tv_history_file_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_history_file_type"
+        tools:text="传输类型: 发送" />
+
+    <TextView
+        android:id="@+id/tv_history_file_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app_padding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="文件名: abc.apk" />
+
+    <TextView
+        android:id="@+id/tv_history_file_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app_padding"
+        app:layout_constraintStart_toStartOf="@+id/tv_history_file_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_history_file_name"
+        tools:text="文件大小: 1.2MB" />
+
+    <TextView
+        android:id="@+id/tv_history_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app_padding"
+        app:layout_constraintStart_toStartOf="@+id/tv_history_file_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_history_device_name"
+        tools:text="传输时间: 2023-4-17 12:00" />
+
+    <TextView
+        android:id="@+id/tv_history_file_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app_padding"
+        app:layout_constraintStart_toStartOf="@+id/tv_history_file_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_history_file_size"
+        tools:text="文件类型: apk" />
+
+    <Button
+        android:id="@+id/btn_delete_current_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app_padding2"
+        android:text="@string/delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_history_time" />
+</androidx.constraintlayout.widget.ConstraintLayout>
