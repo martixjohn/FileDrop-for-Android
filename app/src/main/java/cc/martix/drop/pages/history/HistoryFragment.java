@@ -1,6 +1,7 @@
 package cc.martix.drop.pages.history;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
@@ -37,6 +38,7 @@ public class HistoryFragment extends Fragment implements View.OnClickListener {
     private ViewGroup mView;
     private FragmentActivity mActivity;
     private Thread mInitThread;
+    private AlertDialog mClearHistoryAlertDialog;
 
     public HistoryFragment() {
 
@@ -50,8 +52,8 @@ public class HistoryFragment extends Fragment implements View.OnClickListener {
         mActivity = getActivity();
         mClearHistoryBtn = mView.findViewById(R.id.btn_clear_history);
         mClearHistoryBtn.setOnClickListener(this);
-        mListRecyclerView = mView.findViewById(R.id.rv_history);
 
+        mListRecyclerView = mView.findViewById(R.id.rv_history);
 
 
         mInitThread = new Thread(() -> {
@@ -80,7 +82,6 @@ public class HistoryFragment extends Fragment implements View.OnClickListener {
             mActivity.runOnUiThread(() -> mListRecyclerView.setAdapter(mHistoryListAdapter));
         }).start();
     }
-
 
 
     private void createDialogFromHistoryInfo(int pos, HistoryInfo info) {
@@ -123,17 +124,33 @@ public class HistoryFragment extends Fragment implements View.OnClickListener {
     }
 
     @SuppressLint("NotifyDataSetChanged")
+    private void clearHistory() {
+        /* 如果为空，跳过 */
+        if(mHistoryList.isEmpty()){
+            return;
+        }
+        /* 清空 */
+        new Thread(() -> {
+            mHistoryDao.deleteAll();
+        }).start();
+        while (!mHistoryList.isEmpty()) {
+            mHistoryList.remove(mHistoryList.size() - 1);
+        }
+        mHistoryListAdapter.notifyDataSetChanged();
+    }
+
     @Override
     public void onClick(View v) {
         if (mClearHistoryBtn == v) {
-            /* 清空 */
-            new Thread(() -> {
-                mHistoryDao.deleteAll();
-            }).start();
-            while (!mHistoryList.isEmpty()) {
-                mHistoryList.remove(mHistoryList.size() - 1);
+            if (mClearHistoryAlertDialog == null) {
+                mClearHistoryAlertDialog = new AlertDialog.Builder(mActivity)
+                        .setTitle(R.string.is_sure_clear)
+                        .setMessage(R.string.action_cannot_rollback)
+                        .setPositiveButton(getString(R.string.sure), (dialog, which) -> clearHistory())
+                        .setNegativeButton(getString(R.string.cancel), null)
+                        .create();
             }
-            mHistoryListAdapter.notifyDataSetChanged();
+            mClearHistoryAlertDialog.show();
         }
     }
 }

@@ -50,4 +50,8 @@
     <string name="please_set_file_saving_location">请设置文件保存路径</string>
     <string name="file_saving_location">文件保存路径</string>
     <string name="set_failure">设置失败</string>
+    <string name="is_sure_clear">是否清空</string>
+    <string name="action_cannot_rollback">操作不可逆</string>
+    <string name="sure">确定</string>
+    <string name="cancel">取消</string>
 </resources>

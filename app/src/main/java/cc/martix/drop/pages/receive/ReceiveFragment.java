@@ -177,7 +177,6 @@ public class ReceiveFragment extends Fragment implements View.OnClickListener {
             mSavingLocationInfoTextView.setText(R.string.file_saving_location_not_set);
         } else {
             Log.i(TAG, "文件存储路径: " + mAppPreferences.fileSavingLocation);
-
             startHotSpotAndServer();
         }
         return mView;
@@ -187,6 +186,7 @@ public class ReceiveFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onStop() {
         Log.i(TAG, "onStop");
+        stopHotSpotAndServer();
         super.onStop();
     }
 
