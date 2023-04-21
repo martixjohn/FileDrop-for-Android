@@ -2,6 +2,8 @@
 
 Transfer your data with other device easily by simply scanning QRCode
 
+- Design Language: Material Design 3
+
 ## Requirements
 
 - OS: Android 10+
