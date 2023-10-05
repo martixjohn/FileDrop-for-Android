@@ -1,8 +1,10 @@
 # FileDrop For Android
 
-Transfer your data with other device easily by simply scanning QRCode
+Transfer your data to other device easily by simply scanning QRCode
 
-- Design Language: Material Design 3
+UI Style: Material Design 3
+
+Language: zh_CN
 
 ## Requirements
 
